@@ -9,7 +9,7 @@
     { min: 0.05, max: 0.12, text: "Just a little scroll..." },
     { min: 0.12, max: 0.22, text: "The feed never ends." },
     { min: 0.22, max: 0.34, text: "Still looking for something?" },
-    { min: 0.34, max: 0.48, text: "You've seen this before." },
+    { min: 0.34, max: 0.48, text: "Getting dizzy yet?" },
     { min: 0.48, max: 0.65, text: "Your focus is fading." },
     { min: 0.65, max: 0.85, text: "Brain on autopilot now." },
     { min: 0.85, max: 1.10, text: "Hours gone. Nothing gained." },
