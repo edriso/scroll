@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doom Scroll</title>
+  <link rel="stylesheet" href="assets/index.css" />
+</head>
+<body>
+
+  <div class="sky">
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <main class="scene">
+    <div class="swing-wrapper" id="swingWrapper">
+      <div class="ropes">
+        <div class="rope rope-left"></div>
+        <div class="rope rope-right"></div>
+      </div>
+      <svg class="boat-svg" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg" aria-label="Swing boat">
+        <path d="M10 20 Q110 90 210 20 L200 10 Q110 70 20 10 Z" fill="#c0392b" />
+        <path d="M10 20 Q110 90 210 20 L205 25 Q110 95 15 25 Z" fill="#96281b" />
+        <ellipse cx="110" cy="20" rx="100" ry="10" fill="#e74c3c" />
+        <circle cx="110" cy="8" r="7" fill="#2c2c2c" />
+        <rect x="104" y="14" width="12" height="16" rx="3" fill="#2c2c2c" />
+      </svg>
+      <div class="message-bubble" id="messageBubble">
+        <span id="messageText">Scroll to swing...</span>
+      </div>
+    </div>
+  </main>
+
+  <div class="scroll-track" aria-hidden="true">
+    <div class="scroll-track-inner"></div>
+  </div>
+
+  <footer class="footer">
+    <p>Doom scrolling numbs your mind.<br>You are in control. Put the phone down.</p>
+  </footer>
+
+  <script src="assets/index.js"></script>
+</body>
+</html>
