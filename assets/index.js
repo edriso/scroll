@@ -2,7 +2,7 @@
   const wrapper = document.getElementById('swingWrapper');
   const messageText = document.getElementById('messageText');
   const trackInner = document.querySelector('.scroll-track-inner');
-  const boatSvg = document.querySelector('.boat-svg');
+  const boatSvg = document.querySelector('.swing-svg');
 
   const messages = [
     { min: 0,    max: 0.05, text: "Scroll to swing..." },

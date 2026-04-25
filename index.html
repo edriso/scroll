@@ -14,16 +14,75 @@
 
   <main class="scene">
     <div class="swing-wrapper" id="swingWrapper">
-      <div class="ropes">
-        <div class="rope rope-left"></div>
-        <div class="rope rope-right"></div>
-      </div>
-      <svg class="boat-svg" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg" aria-label="Swing boat">
-        <path d="M10 20 Q110 90 210 20 L200 10 Q110 70 20 10 Z" fill="#c0392b" />
-        <path d="M10 20 Q110 90 210 20 L205 25 Q110 95 15 25 Z" fill="#96281b" />
-        <ellipse cx="110" cy="20" rx="100" ry="10" fill="#e74c3c" />
-        <circle cx="110" cy="8" r="7" fill="#2c2c2c" />
-        <rect x="104" y="14" width="12" height="16" rx="3" fill="#2c2c2c" />
+      <svg class="swing-svg" viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" aria-label="Swing boat">
+        <defs>
+          <linearGradient id="g-hull" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e03030"/>
+            <stop offset="100%" stop-color="#5c0b0b"/>
+          </linearGradient>
+          <linearGradient id="g-inner" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6a1212"/>
+            <stop offset="100%" stop-color="#360505"/>
+          </linearGradient>
+          <linearGradient id="g-rim" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff6050"/>
+            <stop offset="100%" stop-color="#c0392b"/>
+          </linearGradient>
+        </defs>
+
+        <!-- pivot bar -->
+        <rect x="118" y="2" width="64" height="11" rx="5.5" fill="#484848"/>
+        <rect x="144" y="11" width="12" height="6" rx="3" fill="#363636"/>
+
+        <!-- left rope: shadow then main -->
+        <line x1="150" y1="16" x2="72" y2="112" stroke="#3a2006" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="150" y1="16" x2="72" y2="112" stroke="#b8904a" stroke-width="3" stroke-linecap="round"/>
+        <line x1="149" y1="16" x2="71" y2="112" stroke="#d8b870" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+
+        <!-- right rope -->
+        <line x1="150" y1="16" x2="228" y2="112" stroke="#3a2006" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="150" y1="16" x2="228" y2="112" stroke="#b8904a" stroke-width="3" stroke-linecap="round"/>
+        <line x1="151" y1="16" x2="229" y2="112" stroke="#d8b870" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+
+        <!-- hull body: tips at (24,95) and (276,95), keel at (150,196) -->
+        <path d="M 24,95 C 8,140 84,194 150,196 C 216,194 292,140 276,95 C 256,120 44,120 24,95 Z"
+              fill="url(#g-hull)"/>
+
+        <!-- interior cavity -->
+        <path d="M 58,116 C 90,177 210,177 242,116 C 210,122 90,122 58,116 Z"
+              fill="url(#g-inner)"/>
+
+        <!-- rim band -->
+        <path d="M 32,113 C 60,126 240,126 268,113 C 240,118 60,118 32,113 Z"
+              fill="url(#g-rim)"/>
+
+        <!-- interior bench -->
+        <rect x="92" y="162" width="116" height="7" rx="3.5" fill="#440909"/>
+        <rect x="92" y="162" width="116" height="2.5" rx="1.5" fill="#6a1414" opacity="0.5"/>
+
+        <!-- hull plank lines -->
+        <path d="M 70,187 Q 150,192 230,187" fill="none" stroke="#4a0808" stroke-width="1.5" opacity="0.4"/>
+        <path d="M 50,178 Q 150,184 250,178" fill="none" stroke="#4a0808" stroke-width="1.2" opacity="0.3"/>
+
+        <!-- hull rim sheen -->
+        <path d="M 46,106 C 88,119 212,119 254,106"
+              fill="none" stroke="rgba(255,110,90,0.13)" stroke-width="7" stroke-linecap="round"/>
+
+        <!-- left prow ornament -->
+        <path d="M 24,95 C 15,88 9,74 13,61 C 15,73 18,87 24,95 Z" fill="#9a1e1e"/>
+        <circle cx="12" cy="59" r="5.5" fill="#c0392b"/>
+        <circle cx="12" cy="59" r="2.5" fill="#e84030"/>
+
+        <!-- right stern ornament -->
+        <path d="M 276,95 C 285,88 291,74 287,61 C 285,73 282,87 276,95 Z" fill="#9a1e1e"/>
+        <circle cx="288" cy="59" r="5.5" fill="#c0392b"/>
+        <circle cx="288" cy="59" r="2.5" fill="#e84030"/>
+
+        <!-- rope attachment rings -->
+        <circle cx="72" cy="112" r="6" fill="none" stroke="#c8c8c8" stroke-width="2.2"/>
+        <circle cx="72" cy="112" r="2.2" fill="#aaa"/>
+        <circle cx="228" cy="112" r="6" fill="none" stroke="#c8c8c8" stroke-width="2.2"/>
+        <circle cx="228" cy="112" r="2.2" fill="#aaa"/>
       </svg>
       <div class="message-bubble" id="messageBubble">
         <span id="messageText">Scroll to swing...</span>
